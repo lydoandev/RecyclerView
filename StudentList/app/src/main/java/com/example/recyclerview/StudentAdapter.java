@@ -10,18 +10,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.StudentAdapter> {
+public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentViewHolder> {
     ArrayList<Student> studentList;
 
     @NonNull
     @Override
-    public StudentAdapter onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public StudentViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclerview_row, parent, false);
-        return new StudentAdapter(view);
+        return new StudentViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull StudentAdapter holder, int position) {
+    public void onBindViewHolder(@NonNull StudentViewHolder holder, int position) {
         holder.name.setText(studentList.get(position).name);
         holder.score.setText("" + studentList.get(position).score);
     }
@@ -31,10 +31,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Studen
         return studentList.size();
     }
 
-    class StudentAdapter extends RecyclerView.ViewHolder {
+    class StudentViewHolder extends RecyclerView.ViewHolder {
         TextView name, score;
 
-        public StudentAdapter(@NonNull View itemView) {
+        public StudentViewHolder(@NonNull View itemView) {
             super(itemView);
 
             name = itemView.findViewById(R.id.name);

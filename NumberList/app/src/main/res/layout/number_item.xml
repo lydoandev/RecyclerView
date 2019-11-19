@@ -4,9 +4,11 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#ff6666">
+        android:background="#ff6666"
+        android:textSize="50sp">
 
     </TextView>
 </LinearLayout>

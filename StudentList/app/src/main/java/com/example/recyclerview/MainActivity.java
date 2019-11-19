@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         studentList.add(student2);
         studentList.add(student3);
 
-        final RecyclerAdapter adapter = new RecyclerAdapter();
+        final StudentAdapter adapter = new StudentAdapter();
         adapter.studentList = studentList;
         rvAnimals.setAdapter(adapter);
 
